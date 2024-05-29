@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2nbgp457tit4"]
+
+[ext_resource type="Script" path="res://game_objects/health_boost_pickup/health_boost_pickup.gd" id="1_di80g"]
+[ext_resource type="Resource" uid="uid://den08cdeypy3j" path="res://stats/instances/player_stats.tres" id="2_2v0n7"]
+[ext_resource type="Texture2D" uid="uid://dlt74an4n383t" path="res://assets/tilemap.png" id="3_u4edi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71d1a"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oymsu"]
+atlas = ExtResource("3_u4edi")
+region = Rect2(112, 144, 16, 16)
+
+[node name="HealthBoostPickup" type="Area2D"]
+script = ExtResource("1_di80g")
+player_stats = ExtResource("2_2v0n7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_71d1a")
+
+[node name="HealthVialSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_oymsu")

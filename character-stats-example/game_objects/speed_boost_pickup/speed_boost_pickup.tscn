@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://y2vu3cfjt6x2"]
+
+[ext_resource type="Script" path="res://game_objects/speed_boost_pickup/speed_boost_pickup.gd" id="1_0jiyl"]
+[ext_resource type="Texture2D" uid="uid://dlt74an4n383t" path="res://assets/tilemap.png" id="1_7xm5l"]
+[ext_resource type="Resource" uid="uid://den08cdeypy3j" path="res://stats/instances/player_stats.tres" id="2_j1fln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71d1a"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mltfw"]
+atlas = ExtResource("1_7xm5l")
+region = Rect2(80, 160, 16, 16)
+
+[node name="SpeedBoostPickup" type="Area2D"]
+script = ExtResource("1_0jiyl")
+player_stats = ExtResource("2_j1fln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_71d1a")
+
+[node name="SpeedVialSprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_mltfw")

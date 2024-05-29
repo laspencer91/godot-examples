@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0m4ki60y0lmq"]
+
+[ext_resource type="Texture2D" uid="uid://dlt74an4n383t" path="res://assets/tilemap.png" id="1_4kctj"]
+[ext_resource type="Script" path="res://game_objects/player/player.gd" id="1_elrqp"]
+[ext_resource type="Resource" uid="uid://den08cdeypy3j" path="res://stats/instances/player_stats.tres" id="2_yifll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w5ho"]
+atlas = ExtResource("1_4kctj")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifsfi"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_elrqp")
+stats = ExtResource("2_yifll")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2w5ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ifsfi")
