@@ -1,0 +1,2 @@
+class_name PlatformerPlayer
+extends CharacterBody2D
